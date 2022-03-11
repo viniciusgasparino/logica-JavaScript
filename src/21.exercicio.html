@@ -8,13 +8,13 @@
 </head>
 <body>
     <script>
-        const API_URL = "https://jsonplaceholder.typicode.com/users" 
+        const API_URL = "https://jsonplaceholder.typicode.com/comments" 
         
         async function getComents(postId){
           const response = await fetch(API_URL)
           const data = await response.json()
           const filtered = data.filter(obj => {
-                  return obj.id === postId
+                  return obj.postId === postId
           })                                    
             console.log(filtered)
         }
