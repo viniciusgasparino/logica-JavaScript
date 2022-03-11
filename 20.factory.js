@@ -15,5 +15,4 @@ const pessoa2 = Pessoa("joao","Silva",50)
 
 console.log(pessoa1)
 console.log(pessoa2)
-
-console.log(pessoa1.nomeCompleto)
+console.log("Nomecompleto:" + pessoa1.nomeCompleto)
