@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try e catch</title>
+</head>
+<body>        
+  <script>
+      const API_URL = "https://jsonplaceholder.typicode.com/users"
+                                
+      const getUsers = async () => {    
+        try{
+          const response =  await fetch(API_URL)
+          if(response.status === 404){      
+              throw new Error("Não encontrado")
+          }
+          const data = await response.json()
+          const emails = data.map((obj) => {
+            return{
+              email: obj.email
+            }
+          })
+          console.log(emails)     
+        }catch(error){
+          console.log(error.message)
+        }
+       
+      }
+      getUsers()
+
+
+
+
+  </script>
+</body>
+</html>

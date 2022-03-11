@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assincrona</title>
+</head>
+<body>
+  <script>
+
+    const API_URL = "https://jsonplaceholder.typicode.com/users"
+
+
+    async function getUsers(){
+      const response = await fetch(API_URL)
+      const data = await response.json()      
+
+      const userEmail = data.map((obj) => {
+          return {
+            email: obj.email
+          } 
+      })
+        console.log(userEmail)          
+    }
+
+    getUsers()
+
+
+
+
+
+  </script>
+</body>
+</html>
+
